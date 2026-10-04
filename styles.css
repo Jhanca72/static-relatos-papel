@@ -1,0 +1,488 @@
+/* Reset y variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6b4f3a;
+    --secondary-color: #d4a373;
+    --accent-color: #fefae0;
+    --text-dark: #2c2c2c;
+    --text-light: #6c757d;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(107, 79, 58, 0.8), rgba(107, 79, 58, 0.8)),
+                url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1600') center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Catálogo */
+.catalog {
+    padding: 80px 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.book-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-image {
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.book-card:hover .book-image img {
+    transform: scale(1.05);
+}
+
+.book-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.badge-fisico {
+    background-color: #e76f51;
+}
+
+.badge-digital {
+    background-color: #2a9d8f;
+}
+
+.badge-novedad {
+    background-color: #f4a261;
+}
+
+.book-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.book-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.book-author {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.book-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    margin-top: auto;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-to-cart:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Contacto */
+.contact {
+    padding: 80px 20px;
+    background-color: var(--white);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-content p {
+    margin-bottom: 25px;
+    color: var(--text-light);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.3rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Modal del carrito */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-modal.active {
+    display: flex;
+}
+
+.cart-modal-content {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+.cart-modal-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.cart-item-price {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: #e76f51;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cart-total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cart-total p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .book-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    nav ul {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+}

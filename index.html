@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatos de Papel | Libros Físicos y Digitales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Relatos de Papel</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h2>Descubre tu próxima gran historia</h2>
+            <p>Libros físicos y digitales para todos los amantes de la lectura.</p>
+            <a href="#catalogo" class="btn">Explorar catálogo</a>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="catalog">
+        <div class="container">
+            <h2 class="section-title">Nuestro Catálogo</h2>
+            
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="fisico">Físicos</button>
+                <button class="filter-btn" data-filter="digital">Digitales</button>
+                <button class="filter-btn" data-filter="novedad">Novedades</button>
+            </div>
+
+            <!-- Grid de libros -->
+            <div class="books-grid" id="books-grid">
+                <!-- Los libros se generan dinámicamente con JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <p>¿Tienes alguna pregunta? Escríbenos.</p>
+                <form id="contact-form">
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu email" required>
+                    <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Relatos de Papel. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del carrito -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h3>Tu Carrito</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total">$0.00</span></p>
+                <button class="btn" id="checkout-btn">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
